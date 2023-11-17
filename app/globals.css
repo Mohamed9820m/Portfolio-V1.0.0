@@ -135,6 +135,17 @@ body {
 	text-decoration: none;
 }
 
+.nav-link:hover {
+	color: #2963A5 !important; /* Change to the color you want on hover */
+}
+
+.first-link {
+	color: rgb(255, 255, 255) !important;
+	font-size: 19px !important; /* Set color for the first link */
+	margin-right : 95px !important
+  }
+  
+
 .works-item .image:before,
 .works-item .image:after {
 	content: '';

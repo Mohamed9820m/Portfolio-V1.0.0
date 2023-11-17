@@ -58,24 +58,26 @@ export default function App() {
       </NavbarContent>
 
       <NavbarContent className="hidden sm:flex gap-12 font-bold" justify="center">
-        {menuItems.map((item, index) => (
-          <NavbarItem isActive={index === 0} >
-            <Link color="foreground" href="#" className="bg-transparent text-white text-lg">
-              <ScrollLink
-                activeClass="active"
-                to={item.toLowerCase()}
-                spy={true}
-                smooth={true}
-                offset={-70}
-                duration={800}
-                onClick={() => handleMenuItemClick(item)}
-              >
-                {item}
-              </ScrollLink>
-            </Link>
-          </NavbarItem>
-        ))}
-      </NavbarContent>
+  {menuItems.map((item, index) => (
+    <NavbarItem key={index} isActive={index === 0}>
+      <ScrollLink
+        activeClass="active"
+        to={item.toLowerCase()}
+        spy={true}
+        smooth={true}
+        offset={-70}
+        duration={800}
+        onClick={() => handleMenuItemClick(item)}
+        style={{ cursor: 'pointer', color: 'inherit', textDecoration: 'none' }}
+        className={index === 0 ? 'nav-link first-link' : 'nav-link'} 
+      >
+        {item}
+      </ScrollLink>
+    </NavbarItem>
+  ))}
+</NavbarContent>
+
+
 
       <NavbarMenu className="custom-menu-item">
   {menuItems.map((item, index) => (
